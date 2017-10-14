@@ -1,0 +1,25 @@
+本demo 包含了 微信分享 发送信息 支付 都经过测试 
+
+
+
+
+如果支付无法回调 
+
+请检查
+
+1.回调类是否在 wxapi文件夹下 还有 请使用
+ [Android.App.Activity(Name = "com.jinjianlaowu.wxapi.WXPayEntryActivity", Exported = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop)] 来声明回调类 不需要在
+AndroidManifest.xml下 
+
+
+2.第二次签名是否正确 可使用微信开发平台的 在线签名校验
+
+3.一定要是正式安装包才可以 微信支付需要检验你应用的签名 使用debug的签名无法调起支付
+
+4.正确的调试过程是 存档-》签名标识随意填-》生成APK-》安装-》使用微信的gensignatureAPP -》输入你的包名-》得到signtrue -》填入微信开发平台
+
+
+5.还有很坑的一点，微信有调用微信支付有缓存 当你之前失败了 都需要卸载 安装 来测试新的是否正确
+
+
+6.有问题请联系 qq 453547110
